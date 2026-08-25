@@ -1,0 +1,67 @@
+{
+  "pi_command": {
+    "description": "Pi 可执行文件路径",
+    "type": "string",
+    "hint": "当前 Docker 部署的持久化 Pi 路径；通常无需修改",
+    "default": "/AstrBot/data/pi_runtime/node_modules/.bin/pi"
+  },
+  "pi_config_dir": {
+    "description": "Pi 配置目录",
+    "type": "string",
+    "hint": "留空时使用插件数据目录中的 pi_config；models.json 和凭据存放于此",
+    "default": ""
+  },
+  "session_dir": {
+    "description": "Pi 会话文件目录",
+    "type": "string",
+    "hint": "留空时使用插件数据目录中的 sessions",
+    "default": ""
+  },
+  "workspace_root": {
+    "description": "Pi 工作区根目录",
+    "type": "string",
+    "hint": "每个 AstrBot 会话会在此目录下使用独立子目录",
+    "default": "/AstrBot/data/pi_workspaces"
+  },
+  "provider": {
+    "description": "默认模型供应商",
+    "type": "string",
+    "default": "91grok"
+  },
+  "model": {
+    "description": "默认模型",
+    "type": "string",
+    "default": "grok-4.5"
+  },
+  "thinking": {
+    "description": "默认思考等级",
+    "type": "string",
+    "hint": "实际可用档位取决于当前模型；Grok 4.5 通常为 low、medium、high",
+    "default": "high",
+    "options": ["off", "minimal", "low", "medium", "high", "xhigh", "max"]
+  },
+  "tools": {
+    "description": "允许 Pi 使用的工具",
+    "type": "string",
+    "hint": "使用英文逗号分隔；默认允许读写文件、搜索和 Shell",
+    "default": "read,bash,edit,write,grep,find,ls"
+  },
+  "timeout_seconds": {
+    "description": "单次任务超时秒数",
+    "type": "int",
+    "default": 600,
+    "slider": {"min": 10, "max": 3600, "step": 10}
+  },
+  "show_tool_progress": {
+    "description": "显示工具执行进度",
+    "type": "bool",
+    "hint": "最多推送八条工具开始或失败消息，避免刷屏",
+    "default": true
+  },
+  "max_message_chars": {
+    "description": "单条回复最大字符数",
+    "type": "int",
+    "default": 3500,
+    "slider": {"min": 500, "max": 10000, "step": 100}
+  }
+}
