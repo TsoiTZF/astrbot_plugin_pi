@@ -49,7 +49,7 @@ THINKING_LEVELS = {
 
 @register(
     PLUGIN_NAME,
-    "Codex",
+    "TsoiTZF",
     "通过 AstrBot 聊天控制 Pi 编码智能体",
     "v1.1.0",
 )
